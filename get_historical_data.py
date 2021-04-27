@@ -1,75 +1,51 @@
-# https://web-api.coinmarketcap.com/v1/cryptocurrency/listings/historical?convert=USD,BTC&date=2020-04-28&limit=5000&start=201
 
-# get Cryp
-# tocurrency Historical Data Snapshot
-import  requests, json, datetime, os, yaml 
+import  requests, json, datetime, os, yaml , time, random
 from bs4 import BeautifulSoup
-from datetime import timedelta 
+from datetime import timedelta , date
  
-
- 
-# url="https://web-api.coinmarketcap.com/v1/cryptocurrency/listings/historical?convert=USD,BTC&date=2021-04-26&limit=10&start=1"
-
-day_zero=20130428
-
-#print(base_url+str(day_zero))
-
 def next_day(day):
     day=str(day)
-    y,m,d = day[:4],day[4:6],day[6:]
-    return datetime.datetime(int(y), int(m), int(d)) + timedelta(days = 1)
-
-def get_data_table(url):
-    table_MN = pd.read_html(url)
-    df = table_MN[2]
-    print(df.describe())
-    # print("1\n",table_MN)
-    # print("2\n\n\n\n",f'Total tables: {len(table_MN)}')
+    y,m,d = day[0:4],day[5:7],day[8:10]
+    return datetime.date(int(y), int(m), int(d)) + timedelta(days = 1)
 
 #Import Configurations
 def get_configurations():
     directory_path = r'%s' % os.getcwd().replace('\\','//')
 
     configuration_file=directory_path + "//configuration.yaml"
-
     with open(configuration_file) as file:
         config_yaml = yaml.load(file, Loader=yaml.FullLoader)
+    
     return config_yaml 
 
-
-
-
-
-def get_day_data(day):
+def get_day_data(day, start=1, page=""):
+    url = prepare_request(config_file, "USD,EUR,BTC", day, 5000, 1)
     response = requests.get(url)
+
+    #sleep randomly to avoid blocking
+    time.sleep(random.randint(2, 5)) 
+
+
     if response.status_code != 200:
-        print("something is wrong")
+        print("\n\n\n\n ATTENTION: something is wrong with day:",day,"\n\n\n")
 
     soup = BeautifulSoup(response.content, "html.parser")
     soup_text=soup.text
     data_json=json.loads(soup_text)
-
-    if get_last_element(data_json) > 4999:
-        print("Day",day,"has more than 5000 coins")
-    save_json_to_file("Teste",data_json)
-    print("Erro: ")#,data_json)
-
-
-
+    save_json_to_file("crypto_" + str(day) + page, data_json)
+    
+    if get_last_element(data_json)>=4999:
+        get_day_data(day, start=4999,page="pag2")
+        #when they change the coins limit per page this will be out of date but ... for now it’s enough
 
 def get_last_element(data):
     return data["data"][-1]["cmc_rank"]
 
-
-
 def save_json_to_file(filename,json_data):
-    with open(str(filename)+'.json', 'w') as outfile:
+    location=directory_path = r'%s' % os.getcwd().replace('\\','//')+ "//data//"
+
+    with open(location+str(filename)+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
-
-# base_url=config_file["base_url"]
-# url= base_url+str(day_zero)
-print("URL:",url)
-
 
 def prepare_request(config_file, convert, date, limit, start):
     base_url=config_file["base_url"]
@@ -80,13 +56,19 @@ def prepare_request(config_file, convert, date, limit, start):
     return base_url + "historical?" + 'convert=' + convert +"&date="+ date +"&limit="+ limit +"&start="+ start
 
 
+def get_history(start,finish):
+    day = start
+
+    final_day=next_day(next_day(next_day(day)))
 
 
-# https://web-api.coinmarketcap.com/v1/cryptocurrency/listings/historical?convert=USD,BTC&date=20-02-2020&limit=5&start=2
-
-def get_history():
-    config_file=get_configurations()
-
-    for i in range:
+    while day <=  final_day:
+        print("starting day:",day)
+        get_day_data(day)
+        day=next_day(day)
         
-    prepare_request(config_file, "USD,EUR,BTC", date, limit, start)
+ 
+
+# get configurations
+config_file=get_configurations()
+get_history(start=config_file["first_day"], finish = date.today() - timedelta(days=1))

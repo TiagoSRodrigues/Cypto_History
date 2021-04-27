@@ -1,0 +1,334 @@
+{
+    "status": {
+        "timestamp": "2021-04-27T23:53:38.128Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 9,
+        "credit_count": 0,
+        "notice": null
+    },
+    "data": [
+        {
+            "id": 1,
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "slug": "bitcoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": 21000000,
+            "circulating_supply": 11103125,
+            "total_supply": 11103125,
+            "platform": null,
+            "cmc_rank": 1,
+            "last_updated": "2013-05-01T23:55:01.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 1,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 0,
+                    "percent_change_24h": 0,
+                    "percent_change_7d": 0,
+                    "market_cap": 11161324.454125872,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 88.77676487475564,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.54171,
+                    "percent_change_24h": -15.8503,
+                    "percent_change_7d": null,
+                    "market_cap": 985699517.5000212,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 116.990020751953,
+                    "volume_24h": 0,
+                    "percent_change_1h": 1.54171,
+                    "percent_change_24h": -15.8503,
+                    "percent_change_7d": null,
+                    "market_cap": 1298954824.161528,
+                    "last_updated": "2013-05-01T23:55:01.000Z"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "name": "Litecoin",
+            "symbol": "LTC",
+            "slug": "litecoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": 84000000,
+            "circulating_supply": 17259780,
+            "total_supply": 17259780,
+            "platform": null,
+            "cmc_rank": 2,
+            "last_updated": "2013-05-01T23:55:01.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 0.032660303997113414,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.79263,
+                    "percent_change_24h": -12.3579,
+                    "percent_change_7d": null,
+                    "market_cap": 563709.6617232981,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 2.884357140917825,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.79263,
+                    "percent_change_24h": -12.3579,
+                    "percent_change_7d": null,
+                    "market_cap": 49783369.69367066,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 3.80100584030151,
+                    "volume_24h": 0,
+                    "percent_change_1h": 1.79263,
+                    "percent_change_24h": -12.3579,
+                    "percent_change_7d": null,
+                    "market_cap": 65604524.5823192,
+                    "last_updated": "2013-05-01T23:55:01.000Z"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Namecoin",
+            "symbol": "NMC",
+            "slug": "namecoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": null,
+            "circulating_supply": 5437700,
+            "total_supply": 5437700,
+            "platform": null,
+            "cmc_rank": 3,
+            "last_updated": "2013-05-01T23:55:02.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 0.010424356509877546,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 2.26146,
+                    "percent_change_24h": -16.0331,
+                    "percent_change_7d": null,
+                    "market_cap": 56684.523393761134,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 0.9206150420827666,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 2.26146,
+                    "percent_change_24h": -16.0331,
+                    "percent_change_7d": null,
+                    "market_cap": 5006028.41433346,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 1.21318650245667,
+                    "volume_24h": 0,
+                    "percent_change_1h": 2.26146,
+                    "percent_change_24h": -16.0331,
+                    "percent_change_7d": null,
+                    "market_cap": 6596944.2444086345,
+                    "last_updated": "2013-05-01T23:55:02.000Z"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "name": "Peercoin",
+            "symbol": "PPC",
+            "slug": "peercoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": null,
+            "circulating_supply": 18800780,
+            "total_supply": 18800780,
+            "platform": null,
+            "cmc_rank": 4,
+            "last_updated": "2013-05-01T23:55:03.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 0.0027744671424178215,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.83477,
+                    "percent_change_24h": -14.7999,
+                    "percent_change_7d": null,
+                    "market_cap": 52162.146361826126,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 0.24502387103261494,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.83477,
+                    "percent_change_24h": -14.7999,
+                    "percent_change_7d": null,
+                    "market_cap": 4606639.894032567,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 0.32289245724678,
+                    "volume_24h": 0,
+                    "percent_change_1h": 1.83477,
+                    "percent_change_24h": -14.7999,
+                    "percent_change_7d": null,
+                    "market_cap": 6070630.0523561165,
+                    "last_updated": "2013-05-01T23:55:03.000Z"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "name": "Terracoin",
+            "symbol": "TRC",
+            "slug": "terracoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": 42000000,
+            "circulating_supply": 2357909.75,
+            "total_supply": 2357909.75,
+            "platform": null,
+            "cmc_rank": 5,
+            "last_updated": "2013-05-01T23:55:02.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 0.004885474812015193,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 0.746289,
+                    "percent_change_24h": -15.3845,
+                    "percent_change_7d": null,
+                    "market_cap": 11519.50869263004,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 0.43145508266106836,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 0.746289,
+                    "percent_change_24h": -15.3845,
+                    "percent_change_7d": null,
+                    "market_cap": 1017332.146093589,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 0.568571507930756,
+                    "volume_24h": 0,
+                    "percent_change_1h": 0.746289,
+                    "percent_change_24h": -15.3845,
+                    "percent_change_7d": null,
+                    "market_cap": 1340640.3021221317,
+                    "last_updated": "2013-05-01T23:55:02.000Z"
+                }
+            }
+        },
+        {
+            "id": 7,
+            "name": "Devcoin",
+            "symbol": "DVC",
+            "slug": "devcoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": null,
+            "circulating_supply": 4382969856,
+            "total_supply": 4382969856,
+            "platform": null,
+            "cmc_rank": 6,
+            "last_updated": "2013-05-01T23:55:18.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 2.442737373997884e-06,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.21958,
+                    "percent_change_24h": -17.2965,
+                    "percent_change_7d": null,
+                    "market_cap": 10706.444276357322,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 0.00021572753850363332,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 1.21958,
+                    "percent_change_24h": -17.2965,
+                    "percent_change_7d": null,
+                    "market_cap": 945527.2983705042,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 0.000284285750240088,
+                    "volume_24h": 0,
+                    "percent_change_1h": 1.21958,
+                    "percent_change_24h": -17.2965,
+                    "percent_change_7d": null,
+                    "market_cap": 1246015.8737926504,
+                    "last_updated": "2013-05-01T23:55:18.000Z"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "name": "Novacoin",
+            "symbol": "NVC",
+            "slug": "novacoin",
+            "num_market_pairs": null,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "tags": [
+                "mineable"
+            ],
+            "max_supply": null,
+            "circulating_supply": 274491.03125,
+            "total_supply": 274491.03125,
+            "platform": null,
+            "cmc_rank": 7,
+            "last_updated": "2013-05-01T23:55:03.000Z",
+            "quote": {
+                "BTC": {
+                    "price": 0.03165506168875398,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 2.52809,
+                    "percent_change_24h": -15.8104,
+                    "percent_change_7d": null,
+                    "market_cap": 8689.030527228448,
+                    "last_updated": "2013-05-02T00:00:02.000Z"
+                },
+                "EUR": {
+                    "price": 2.7955803239376307,
+                    "volume_24h": 1e-08,
+                    "percent_change_1h": 2.52809,
+                    "percent_change_24h": -15.8104,
+                    "percent_change_7d": null,
+                    "market_cap": 767361.7260598494,
+                    "last_updated": "2013-05-01T23:59:00.000Z"
+                },
+                "USD": {
+                    "price": 3.68401575088501,
+                    "volume_24h": 0,
+                    "percent_change_1h": 2.52809,
+                    "percent_change_24h": -15.8104,
+                    "percent_change_7d": null,
+                    "market_cap": 1011229.2826016695,
+                    "last_updated": "2013-05-01T23:55:03.000Z"
+                }
+            }
+        }
+    ]
+}
