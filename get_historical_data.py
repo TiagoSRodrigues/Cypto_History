@@ -18,8 +18,13 @@ def get_configurations():
     
     return config_yaml 
 
-def get_day_data(day, start=1, page=""):
-    url = prepare_request(config_file, "USD,EUR,BTC", day, 5000, 1)
+def get_day_data(day, start=1, limit=1000, page=1):
+    
+    
+    print("day",day," start", start, "limit", limit," page", page)
+    
+    
+    url = prepare_request(config_file, "USD,EUR,BTC", day, limit, 1)
     response = requests.get(url)
 
     #sleep randomly to avoid blocking
@@ -32,18 +37,19 @@ def get_day_data(day, start=1, page=""):
     soup = BeautifulSoup(response.content, "html.parser")
     soup_text=soup.text
     data_json=json.loads(soup_text)
-    save_json_to_file("crypto_" + str(day) + page, data_json)
+    save_json_to_file("crypto_" + str(day) + "_" + str(page), data_json)
     
-    if get_last_element(data_json)>=4999:
-        get_day_data(day, start=4999,page="pag2")
-        #when they change the coins limit per page this will be out of date but ... for now it’s enough
+    last_coin=get_last_element(data_json)
+    
+    if last_coin == limit:
+        get_day_data(day, start=last_coin + 1, limit=last_coin + 1000, page = page+1)
 
 def get_last_element(data):
     return data["data"][-1]["cmc_rank"]
 
 def save_json_to_file(filename,json_data):
-    location=directory_path = r'%s' % os.getcwd().replace('\\','//')+ "//data//"
-
+    # location=directory_path = r'%s' % os.getcwd().replace('\\','//')+ "//data//"
+    location = "E://Crypto_hystory//"
     with open(location+str(filename)+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
 
@@ -59,11 +65,10 @@ def prepare_request(config_file, convert, date, limit, start):
 def get_history(start,finish):
     day = start
 
-    final_day=next_day(next_day(next_day(day)))
-
-
-    while day <=  final_day:
-        print("starting day:",day)
+    while str(day) <=  str(finish):
+        if finish >  str(date.today() - timedelta(days=1)):
+            print("I can not predict the future!")
+            break
         get_day_data(day)
         day=next_day(day)
         
@@ -71,4 +76,5 @@ def get_history(start,finish):
 
 # get configurations
 config_file=get_configurations()
-get_history(start=config_file["first_day"], finish = date.today() - timedelta(days=1))
+get_history(start=config_file["first_day"], finish = str(date.today() - timedelta(days=1)))
+# get_history(start="2021-04-27", finish = str(date.today() - timedelta(days=1)))
