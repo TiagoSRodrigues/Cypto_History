@@ -1,6 +1,6 @@
 exemple: https://web-api.coinmarketcap.com/v1/cryptocurrency/listings/historical?convert=USD,BTC&date=2021-04-25&limit=5000&start=201
 first_day: 2013-04-28
-
+database_path: C://Crypto//price_db//
 base_url: https://web-api.coinmarketcap.com/v1/cryptocurrency/listings/
 methods: 
   - historical:
