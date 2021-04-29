@@ -31,7 +31,7 @@ def get_day_data(day, start=1, limit=1000, page=1):
         print("\n\n\n\n ATTENTION: something is wrong with day:",day,"\n\n\n")
 
     soup = BeautifulSoup(response.content, "html.parser")
-    soup_text=soup.text
+    soup_text=soup.text 
     data_json=json.loads(soup_text)
     save_json_to_file("crypto_" + str(day) + "_" + str(page), data_json)
     
@@ -46,7 +46,6 @@ def get_last_element(data):
     return data["data"][-1]["cmc_rank"]
 
 def save_json_to_file(filename,json_data):
-    # location=directory_path = r'%s' % os.getcwd().replace('\\','//')+ "//data//"
     location = config_file["database_path"] 
     with open(location+str(filename)+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
