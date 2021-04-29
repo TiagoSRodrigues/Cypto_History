@@ -14,4 +14,4 @@ Web scrapper to get crypto prices history
 
 
 ### ETL.py
-Get the data from seperated json for each day and compile in panda's dataframes
+-> Get the data from seperated json for each day and compile in panda's dataframes
