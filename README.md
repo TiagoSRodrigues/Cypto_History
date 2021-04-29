@@ -3,14 +3,14 @@ Web scrapper to get crypto prices history
 
 ## Files:
 ### import_data_functions.py
-> functions to get the information from website's api  
+-> Functions to get the information from website's api  
 
 ### get_all_price_history.py
-Automatically get all the past history from all coins  
+-> Automatically get all the past history from all coins  
 
 
 ### update_database.py
-Checks the last day in the database and if is older then a day gets the new information  
+-> Checks the last day in the database and if is older then a day gets the new information  
 
 
 ### ETL.py
