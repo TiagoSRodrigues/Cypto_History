@@ -26,7 +26,6 @@ def get_day_data(day, start=1, limit=1000, page=1):
     #sleep randomly to avoid blocking
     time.sleep(random.randint(2, 5)) 
 
-    print("code", response.status_code)
     if response.status_code != 200:
         print("\n\n\n\n ATTENTION: something is wrong with day:",day,"\n\n\n")
 
@@ -34,13 +33,13 @@ def get_day_data(day, start=1, limit=1000, page=1):
     soup_text=soup.text 
     data_json=json.loads(soup_text)
     save_json_to_file("crypto_" + str(day) + "_" + str(page), data_json)
+    print("File added to db :  day",day," start", start, "limit", limit," page", page)
     
     last_coin=get_last_element(data_json)
     
     if last_coin == limit:
         get_day_data(day, start=last_coin + 1, limit=last_coin + 1000, page = page+1)
     
-    print("File added to db :  day",day," start", start, "limit", limit," page", page)
 
 def get_last_element(data):
     return data["data"][-1]["cmc_rank"]
@@ -67,7 +66,7 @@ def get_history(start,finish):
             if finish >  str(date.today() - timedelta(days=1)):
                 print("I can not predict the future!")
                 break
-            print("Day ",day)
+            print("importing day ",day)
 
             get_day_data(day)
             
