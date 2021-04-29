@@ -74,13 +74,14 @@ def get_history(start,finish):
             erros.append(day)
             print(erros)
         day=next_day(day)
-
-    with open("Error_days "+str(datetime.datetime.now())[:10]+"_"+
-                str(datetime.datetime.now())[11:13]+"h"+
-                str(datetime.datetime.now())[14:16]+"m"+
-                str(datetime.datetime.now())[22:24]+"s.txt", "w") as txt_file:
-        for el in erros:
-            txt_file.write("".join(str(el)) + "\n") # works with any number of elements in a line
+    
+    if len(erros)>0:
+        with open("//data//Error_logs//Error_days "+str(datetime.datetime.now())[:10]+"_"+
+                    str(datetime.datetime.now())[11:13]+"h"+
+                    str(datetime.datetime.now())[14:16]+"m"+
+                    str(datetime.datetime.now())[22:24]+"s.txt", "w") as txt_file:
+            for el in erros:
+                txt_file.write("".join(str(el)) + "\n") # works with any number of elements in a line
 
 
 def check_files_in_db():
