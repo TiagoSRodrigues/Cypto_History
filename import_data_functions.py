@@ -3,6 +3,10 @@ import  requests, json, datetime, os, yaml , time, random
 from bs4 import BeautifulSoup
 from datetime import timedelta , date
  
+
+
+
+
 def next_day(day):
     day=str(day)
     y,m,d = day[0:4],day[5:7],day[8:10]
@@ -32,7 +36,7 @@ def get_day_data(day, start=1, limit=1000, page=1):
     soup = BeautifulSoup(response.content, "html.parser")
     soup_text=soup.text 
     data_json=json.loads(soup_text)
-    save_json_to_file("crypto_" + str(day) + "_" + str(page), data_json)
+    save_json_to_file("//coin_db//crypto_" + str(day) + "_" + str(page), data_json)
     print("File added to db :  day",day," start", start, "limit", limit," page", page)
     
     last_coin=get_last_element(data_json)
@@ -63,7 +67,7 @@ def get_history(start,finish):
     erros = []
     while str(day) <=  str(finish):
         try: 
-            if finish >  str(date.today() - timedelta(days=1)):
+            if str(finish) >  str(date.today() - timedelta(days=1)):
                 print("I can not predict the future!")
                 break
             print("importing day ",day)
